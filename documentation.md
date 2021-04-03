@@ -13,11 +13,11 @@ Links to all documentation markdown files in the project.
 
 ---
 ## expansions
-[ascii.md](.\src\expansions\ascii.md)  
-[autocorrect.md](.\src\expansions\autocorrect.md)  
-[german-umlauts.md](.\src\expansions\german-umlauts.md)  
-[math-expansions.md](.\src\expansions\math-expansions.md)  
+[ascii.md](src/expansions/ascii.md)  
+[autocorrect.md](src/expansions/autocorrect.md)  
+[german-umlauts.md](src/expansions/german-umlauts.md)  
+[math-expansions.md](src/expansions/math-expansions.md)  
 
 ---
 ## global
-[AdvancedWindowSnap.md](.\src\global\AdvancedWindowSnap.md)  
+[AdvancedWindowSnap.md](src/global/AdvancedWindowSnap.md)  
