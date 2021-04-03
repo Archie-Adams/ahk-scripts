@@ -66,7 +66,8 @@ for root, dirs, files in os.walk("src"):
                     fileOutput.write(headingTag + currentHeading + "\n")
                     fileDocOutput.write(headingTag + currentHeading + "\n")
 
-            link = "[" + file + "](.\\" + root + "\\" + file + ")  \n"
+            link = "[" + file + "]("
+            link += root.replace("\\", "/") + "/" + file + ")  \n"
             print("Adding links to: " + file)
             fileOutput.write(link)
             fileDocOutput.write(link)
