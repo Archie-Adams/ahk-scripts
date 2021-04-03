@@ -1,7 +1,7 @@
 
 ----
 (The following is automatically generated from the src directory by 
-[build-readme.py](./build-readme.py).)  
+[build-readme.py](build-readme.py).)  
 
 ----
 # Documentation for all scripts
