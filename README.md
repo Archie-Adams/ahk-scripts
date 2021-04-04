@@ -20,7 +20,7 @@ caps key to offer program scope shortcuts where more are needed.
 - All global level shortcuts will use the <kbd>WIN</kbd> key.  
 - There will be help files that can be accessed with <kbd>RAlt + /</kbd>, or
 <kbd>WIN + RAlt + /</kbd> for global shortcuts.  
-  - These will be created using [this website project]() I made for this purpose.  
+  - These will be created using [this website project](https://github.com/Archie-Adams/keyboard-shortcut-map-maker) I made for this purpose.  
   - The keyboard shortcut to open them should toggle them off as well.  
   - Each situation will have its own help file.  
 
