@@ -21,3 +21,7 @@ Links to all documentation markdown files in the project.
 ---
 ## global
 [AdvancedWindowSnap.md](src/global/AdvancedWindowSnap.md)  
+
+---
+## programs
+[chrome.md](src/programs/chrome/chrome.md)  
