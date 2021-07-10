@@ -559,8 +559,9 @@ Return
 #!a::
 Run, chrome.exe "https://www.amazon.co.uk/"
 Return
-; #!s::
-; Return
+#!s::
+Run shell:startup
+Return
 #!d::
 Run, chrome.exe "https://app.diagrams.net/"
 Return
