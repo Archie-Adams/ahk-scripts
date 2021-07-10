@@ -9,6 +9,7 @@
 /* -------------------------------------------------------------------------- */
 */
 
+SetCapsLockState, AlwaysOff
 
 ; 2 = A window's title can contain WinTitle anywhere inside it to be a match.
 SetTitleMatchMode, 2
