@@ -574,8 +574,9 @@ Return
 ; Return
 ; #!j::
 ; Return
-; #!k::
-; Return
+#!k:: ; Runs Mircrosoft store camera app.
+Run shell:AppsFolder\Microsoft.WindowsCamera_8wekyb3d8bbwe!App
+Return
 ; #!l::
 ; Return
 ; #!;::
