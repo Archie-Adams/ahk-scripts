@@ -6,25 +6,10 @@
 ;                  Allows for easier typing of german umlauts.                 ;
 ;  --------------------------------------------------------------------------  ;
 
-
-:*:``a::
-Send, {BACKSPACE}ä
-return
-:*:~~A::
-Send, {BACKSPACE}Ä
-return
-:*:``u::
-Send, {BACKSPACE}ü
-return
-:*:~~U::
-Send, {BACKSPACE}Ü
-return
-:*:``o::
-Send, {BACKSPACE}ö
-return
-:*:~~O::
-Send, {BACKSPACE}Ö
-return
-:*:``s::
-Send, {BACKSPACE}ß
-return
+>!>^a:: Send, ä
+>!>^+a:: Send, Ä
+>!>^u:: Send, ü
+>!>^+u:: Send, Ü
+>!>^o:: Send, ö
+>!>^+o:: Send, Ö
+>!>^s:: Send, ß
