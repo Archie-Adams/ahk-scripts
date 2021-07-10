@@ -24,3 +24,15 @@ If (WinActive("template-help.html - Google Chrome")) {
 }
 Return
 ;  --------------------------------------------------------------------------  ;
+
+
+; How to do three key caps shortcuts.
++s::
+{
+  if (GetKeyState("CapsLock", "P")) {
+    Run, chrome.exe "https://app.diagrams.net/"
+  }
+  else { ; Normal shift s
+  }
+}
+Return
