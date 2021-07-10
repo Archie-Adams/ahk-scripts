@@ -1,11 +1,11 @@
 # Ahk-Scripts
 
-This is a personal project aiming create a comprehensive set of keyboard
+This is project aims to create a comprehensive set of keyboard
 shortcuts allowing effective use of all common programs using
 only the keyboard.  
 
 All scripts are designed to be modular and independent - so any .ahk file can
-be taken and used independently.  
+be taken and used on its own.  
 If you publicly release any of these files please link to or credit to this
 repository.  
 
@@ -21,8 +21,8 @@ caps key to offer program scope shortcuts where more are needed.
 - There will be help files that can be accessed with <kbd>RAlt + /</kbd>, or
 <kbd>WIN + RAlt + /</kbd> for global shortcuts.  
   - These will be created using [this website project](https://github.com/Archie-Adams/keyboard-shortcut-map-maker) I made for this purpose.  
-  - The keyboard shortcut to open them should toggle them off as well.  
-  - Each situation will have its own help file.  
+  - The keyboard shortcut to open them toggles them off as well.  
+  - Each window/website will have its own help file.  
 
 # Contribution
 
