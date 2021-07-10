@@ -561,8 +561,9 @@ Run, chrome.exe "https://www.amazon.co.uk/"
 Return
 ; #!s::
 ; Return
-; #!d::
-; Return
+#!d::
+Run, chrome.exe "https://app.diagrams.net/"
+Return
 ; #!f::
 ; Return
 #!g::
