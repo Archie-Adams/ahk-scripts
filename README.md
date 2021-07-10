@@ -1,6 +1,6 @@
 # Ahk-Scripts
 
-This is project aims to create a comprehensive set of keyboard
+This project aims to create a comprehensive set of keyboard
 shortcuts allowing effective use of all common programs using
 only the keyboard.  
 
