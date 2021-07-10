@@ -25,4 +25,15 @@ if ($confirmation -eq 'y') {
     $Shortcut.TargetPath = $_.FullName
     $Shortcut.Save()
   }
+
+  # Create shortcut for each .html file in .\src.
+  Get-ChildItem -Path ".\src" -Recurse -Filter *.html |
+  Foreach-Object {
+    Write-Host "Creating shortcut for $_"
+    $WshShell = New-Object -comObject WScript.Shell
+    $ShortcutPath = "$PWD\build\shortcuts\$_".Replace(".html", ".lnk")
+    $Shortcut = $WshShell.CreateShortcut("$ShortcutPath")
+    $Shortcut.TargetPath = $_.FullName
+    $Shortcut.Save()
+  }
 }
