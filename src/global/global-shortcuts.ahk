@@ -598,8 +598,9 @@ Return
 #!b::
 Run, "C:\Program Files (x86)\MusicBee\MusicBee.exe"
 Return
-; #!n::
-; Return
+#!n::
+Run, chrome.exe "https://www.notion.so/"
+Return
 #!m::
 Run, chrome.exe "https://minerva.leeds.ac.uk/"
 Return
