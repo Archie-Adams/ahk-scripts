@@ -1,3 +1,5 @@
+; TODO: Refactor code, remove unnecessary functions and look online for better/more example off inst switches.
+
 switchToChrome()
 {
 IfWinNotExist, ahk_exe chrome.exe

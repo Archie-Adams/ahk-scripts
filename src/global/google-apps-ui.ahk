@@ -1,3 +1,13 @@
+/* -------------------------------------------------------------------------- */
+/*                             google-apps-ui.ahk                             */
+/* -------------------------------------------------------------------------- */
+/*                            Author: Archie Adams                            */
+/* -------------------------------------------------------------------------- */
+/*          This script adds a GUI to select any Google service via a         */
+/*                        hotkey when the GUI is open.                        */
+/* -------------------------------------------------------------------------- */
+*/
+
 #SingleInstance, force
 
 ; ------------------------- Configuration Variables ------------------------  ;
@@ -7,7 +17,7 @@ If (%configLoaded% == true) {
   ;; Config loaded correctly.
 } else {
   ;; Need to use default values.
-  googleAppsUi_browser = chrome.exe
+  googleAppsUi_browser = "chrome.exe"
   googleAppsUi_hotkey = +>+g
 }
 ; --------------------------------------------------------------------------  ;
@@ -39,13 +49,9 @@ Gui, add, text,, Google Account: Z
 Gui, add, text,, Google Password Manager: N
 Gui, add, text,, Google Firebase: B
 Gui, add, text,, Google Cloud Console: O
-Gui, Font, strike
 Gui, add, text,, Google Currents: U
-Gui, Font, norm
 Gui, add, text,, Google Keep: K
-Gui, Font, strike
 Gui, add, text,, Google Cloud Search: Q
-Gui, Font, norm
 Gui, add, text,, Google Jamboard: J
 
 Gui, Add, Text, w150 0x10  ;Horizontal Line > Etched Gray
@@ -66,6 +72,8 @@ Gui, add, text,, Google Scholar: ALT+S
 Gui, add, text,, Google Shopping: ALT+P
 Gui, add, text,, Google Patents: ALT+A
 Gui, add, text,, YouTube: ALT+Y
+
+; TODO: Add chrome:// urls
 ; --------------------------------------------------------------------------  ;
 
 
@@ -109,14 +117,14 @@ I::openURL("https://sites.google.com/new")
 J::openURL("https://jamboard.google.com/")
 K::openURL("https://keep.google.com/u/0/")
 M::openURL("https://www.google.com/maps")
-N::openURL("https://passwords.google.com/?standalone=false&hl=en&utm_source=google-account&utm_medium=web&pli=1")
+N::openURL("https://passwords.google.com")
 O::openURL("https://console.cloud.google.com/")
 P::openURL("https://photos.google.com/")
-; Q::openURL("")
+Q::openURL("https://cloudsearch.google.com/")
 R::openURL("chrome://newtab")
 S::openURL("https://docs.google.com/presentation/u/0/")
 T::openURL("https://translate.google.co.uk/")
-; U::openURL("")
+U::openURL("https://currents.google.com")
 V::openURL("https://www.instantstreetview.com/")
 W::openURL("https://docs.google.com/document/u/0/")
 X::openURL("https://docs.google.com/spreadsheets/u/0/")
