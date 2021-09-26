@@ -1,11 +1,13 @@
+; TODO: Find a way to interface with vscode keyboard shortcuts.
+; IDEA: Potentially a vscode extension.
+; IDEA: VSCode is chrome based so maybe chrome.ahk works?
 /* -------------------------------------------------------------------------- */
-/*                                template.ahk                                */
+/*                                 vscode.ahk                                 */
 /* -------------------------------------------------------------------------- */
 /*                            Author: Archie Adams                            */
-/*                       Source: https://www.google.com/                      */
 /* -------------------------------------------------------------------------- */
-/*            This is a short description of what this script does.           */
-/*                     It is okay to be a few lines long.                     */
+/*          This script defines hotkeys and expansions available when         */
+/*                              vscode is active.                             */
 /* -------------------------------------------------------------------------- */
 */
 
@@ -45,14 +47,16 @@ Return
 ;  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  ;
 
 ; Pastes header template.
+; BUG: Sometimes pastes normal clipboard on first or second ativation after
+; file loading.
 c::
 {
-   temp := clipboardall
-   clipboard := "/* -------------------------------------------------------------------------- */`n/*                                template.ahk                                */`n/* -------------------------------------------------------------------------- */`n/*                            Author: Archie Adams                            */`n/*                       Source: https://www.google.com/                      */`n/* -------------------------------------------------------------------------- */`n/*            This is a short description of what this script does.           */`n/*                     It is okay to be a few lines long.                     */`n/* -------------------------------------------------------------------------- */`n*/"
-   Send, ^v
-   clipboard := temp
+  temp := clipboardall
+  clipboard := "/* -------------------------------------------------------------------------- */`n/*                                template.ahk                                */`n/* -------------------------------------------------------------------------- */`n/*                            Author: Archie Adams                            */`n/*                       Source: https://www.google.com/                      */`n/* -------------------------------------------------------------------------- */`n/*            This is a short description of what this script does.           */`n/*                     It is okay to be a few lines long.                     */`n/* -------------------------------------------------------------------------- */`n*/"
+  Send, ^v
+  clipboard := temp
 }
 return
 
 +c::msgbox, hello
-/* -------------------------------------------------------------------------- */
+;  --------------------------------------------------------------------------  ;
