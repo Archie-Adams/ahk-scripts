@@ -16,7 +16,7 @@ configLoaded = false
 If (%configLoaded% == true) {
   ;; Config loaded correctly.
 } else {
-  ;; Need to use default values.
+  ; Need to use default values.
   googleAppsUi_browser = "chrome.exe"
   googleAppsUi_hotkey = +>+g
 }
