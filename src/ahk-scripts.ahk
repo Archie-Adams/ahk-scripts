@@ -40,19 +40,18 @@ Run, "global\fastnav\google-apps-ui.ahk"
 
 
 ; program shortcuts ----------------------
-; working on own but not parrelal, not within ahk-scripts.
 #Include programs\chrome\chrome.ahk
 #Include programs\vscode\vscode.ahk
 ;  ---------------------------------------
 
 
 ; website shortcuts ----------------------
-#Include websites\all-websites-temp.ahk
-; #Include websites\example-out.ahk
+#Include websites\websites.ahk
 ;  ---------------------------------------
 
 
 
+;  --------------------------------------------------------------------------  ;
 ; Script reload shortcut.
 #If
 #>!Enter::
