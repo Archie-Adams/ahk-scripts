@@ -19,5 +19,5 @@ configLoaded = true
 ; AHK style hotkey to toggle the UI open. Should be globally available.
 googleAppsUi_hotkey = +>+g
 ; Filepath to browser that can be passed urls. eg. chrome.exe, msedge.exe
-googleAppsUi_browser = chrome.exe
+googleAppsUi_browser = "chrome.exe"
 ;  --------------------------------------------------------------------------  ;
