@@ -8,7 +8,7 @@
     }
     else
     {
-        If WinExist, Windows PowerShell
+        If WinExist, Windows PowerShell ; BUG: Dosent work.
         {
             WinActivate, Windows PowerShell
             Return
@@ -52,7 +52,10 @@ Return
 
 
 
-; +#`::
++#`::
+; run powershell.exe
+Run shell:AppsFolder\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App
+Return
 ; Return
 ; +#1::
 ; Return
