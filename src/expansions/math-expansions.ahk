@@ -9,6 +9,8 @@
 ; TODO: Break up this file into sections, add more characters.
 ; TODO: Use laytex commands.
 
+::\at::$(Q,\Sigma,\delta,q_0,F)$
+
 ; Math Symbols
 ::===::≡
 ::\!=::≠
@@ -19,7 +21,7 @@
 
 ::\dot::⋅
 ::\div::÷
-::\times::×
+; ::\times::×
 ::\mult::×
 ::\*::×
 ::\+-::±
@@ -46,8 +48,8 @@
 
 ; Logic
 :*:\not::¬
-:*:\exists::∃
-:*:\fall::∀
+; :*:\exists::∃
+; :*:\fall::∀
 
 ::\after::∘
 ::\comp::∘
@@ -56,7 +58,7 @@
 ::\_>::→
 ::\implies::→
 ::\rarrow::→
-::\rightarrow::→
+; ::\rightarrow::→
 ::\<-::←
 ::\<_::←
 ::\larrow::←
@@ -86,10 +88,10 @@
 ::\or::∨
 
 ; Sets
-::\in::∈
+; ::\in::∈
 ::\nin::∉
 
-::\emptyset::∅
+; ::\emptyset::∅
 
 ::\sub::⊆
 ::\psub::⊊
@@ -189,39 +191,39 @@
 ::\m::ⅿ
 
 ; Greek letters
-::\Gamma::Γ
-::\Delta::Δ
-::\Theta::Θ
-::\Lambda::Λ
-::\Xi::Ξ
-::\Pi::Π
-::\Sigma::Σ
-::\Phi::Φ
-::\Psi::Ψ
-::\Omega::Ω
+::>Gamma::Γ
+::>Delta::Δ
+::>Theta::Θ
+::>Lambda::Λ
+::>Xi::Ξ
+::>Pi::Π
+::>Sigma::Σ
+::>Phi::Φ
+::>Psi::Ψ
+::>Omega::Ω
 
-::\alpha::α
-::\beta::β
-::\gamma::γ
-::\delta::δ
-::\epsilon::ε
-::\zeta::ζ
-::\eta::η
-::\theta::θ
-::\iota::ι
-::\kappa::κ
-::\lamda::λ
-::\mu::μ
-::\nu::ν
-::\gxi::ξ ; Conflicts with roman numeral
-::\\xi::ξ
-::\pi::π
-::\rho::ρ
-::\fsigma::ς
-::\sigma::σ
-::\tau::τ
-::\upsilon::υ
-::\phi::φ
-::\chi::χ
-::\psi::ψ
-::\omega::ω
+::>alpha::α
+::>beta::β
+::>gamma::γ
+::>delta::δ
+::>epsilon::ε
+::>zeta::ζ
+::>eta::η
+::>theta::θ
+::>iota::ι
+::>kappa::κ
+::>lamda::λ
+::>mu::μ
+::>nu::ν
+::>gxi::ξ ; Conflicts with roman numeral
+::>>xi::ξ
+::>pi::π
+::>rho::ρ
+::>fsigma::ς
+::>sigma::σ
+::>tau::τ
+::>upsilon::υ
+::>phi::φ
+::>chi::χ
+::>psi::ψ
+::>omega::ω

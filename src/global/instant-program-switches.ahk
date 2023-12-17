@@ -14,7 +14,7 @@ else
 switchToChrome()
 return
 
-
+; TODO: Switch to vscode
 
 switchToExplorer(){
 IfWinNotExist, ahk_class CabinetWClass

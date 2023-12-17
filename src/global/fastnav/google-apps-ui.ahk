@@ -12,13 +12,13 @@
 
 ; ------------------------- Configuration Variables ------------------------  ;
 configLoaded = false
-#Include *i ../../config/config.ahk
-If (%configLoaded% == true) {
+#Include *i C:\Users\archi\OneDrive\ahk-scripts\config\config.ahk ; FIXME: Needs to be more dynamic.
+If (%configLoaded%) {
   ;; Config loaded correctly.
 } else {
   ; Need to use default values.
   googleAppsUi_browser = "chrome.exe"
-  googleAppsUi_hotkey = +>+g
+  googleAppsUi_hotkey = #!z
 }
 ; --------------------------------------------------------------------------  ;
 
@@ -89,7 +89,7 @@ else
 return
 
 ;; Hotkeys only work when UI is toggled shown.
-#If (toggle)
+#If (toggle) ; TODO: In actual working version have windows with hidden window names to allow multiple duplicate vars.
 
 Esc::
 toggle := !toggle
@@ -104,6 +104,15 @@ openURL(url)
   toggle := !toggle
   Gui, hide
 }
+
+
+; global
+; emoty initialy, ability to add menus
+
+; menu file
+; <+>+g::Google Programs
+
+
 
 A::openURL("https://script.google.com/home/start")
 B::openURL("https://console.firebase.google.com/")

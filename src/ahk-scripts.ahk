@@ -14,10 +14,9 @@
 SetCapsLockState, AlwaysOff
 ; A window's title can contain WinTitle anywhere inside it to be a match.
 SetTitleMatchMode, 2
-
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 
 Run, "global\fastnav\google-apps-ui.ahk"
-; Run, "programs\vscode\TEST.ahk"
 
 ; TODO: Single config. Perhaps in this file.
 ; Set include directory
@@ -69,3 +68,10 @@ path_google = C:\Users\archi\OneDrive\ahk-scripts\src\global\fastnav\google-apps
 WinClose, %path_google% ahk_class AutoHotkey
 ExitApp
 Return
+
+
+
+; /* -------------------------------------------------------------------------- */
+; TESTING ZONE
+
+Shift & Backspace::Send, {Delete}
