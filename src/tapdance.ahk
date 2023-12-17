@@ -1,20 +1,3 @@
-; StartTime := A_TickCount
-
-; g::
-; StartTime := A_MSec
-; return
-
-; g UP::
-; If (%A_MSec% - %StartTime% < 1000) {
-;   Send, G
-; } else {
-;   MsgBox, LongPress
-; }
-; return
-
-
-
-
 ;?????????????????????????????????????\ .-------------------------------------+
 return                                 ;                                      |
 Timer:                                 ; -  - triple Tap + Hold - BLOCK 1 -  -|

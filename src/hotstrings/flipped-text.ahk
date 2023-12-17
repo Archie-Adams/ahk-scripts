@@ -1,4 +1,4 @@
-﻿; flipped-text.ahk v0.1.0
+﻿; flipped-text.ahk v0.2.0
 ; Copyright (c) 2023 Archie Adams
 ; TODO: GitHub URL
 ;
@@ -36,33 +36,45 @@ SetBatchLines, -1
 ; https://www.fileformat.info/convert/text/upside-down-map.htm
 ; https://www.web2generators.com/text-related-tools/write-upside-down
 
-; flip_selected_text_hotkey := "#!Space"
-toggle_flipped_text_hotkey := "!+Space"
 global toggle_flipped_text := false
 
-Hotkey, %toggle_flipped_text_hotkey%, toggleFlippedTextToggle
-return
+; --------------------------------- Functions -------------------------------- ;
 
 toggleFlippedTextToggle() {
   toggle_flipped_text := !toggle_flipped_text
 }
 
-; Hotkey, %flip_selected_text_hotkey%, flipSelectedText
-; return
+flipText(text) {
+  ; TODO: Replace all characters in text that can be replaced.
 
-flipSelectedText() {
-  ; TODO: use clipboard method
-  ; TODO: Replace all 
   ; Good example perhps
   ; https://www.autohotkey.com/board/topic/24431-convert-text-uppercase-lowercase-capitalized-or-inverted/
+
+  return text
 }
+
+flipSelectedText() {
+  ; TODO: Implement me.
+  ; Save clipboard to variable
+  ; Send, ^x
+  ; text = clipboard
+  ; text := flipText(text)
+  ; Send, %text%
+  ; cloboard = saved previous clipboard
+  ; saved previous clipboard := "" // in case it's massive
+}
+
+; ---------------------------------- Hotkeys --------------------------------- ;
+
+!+Space::toggleFlippedTextToggle()
+; ::flipSelectedText ; TODO;
 
 #If (toggle_flipped_text)
 
 ; Non-standard characters
-; :*:‿::Send ⁀{Left} ; - CHARACTER TIE (U+2040)
-; :*:⁅::Send ⁆{Left} ; - RIGHT SQUARE BRACKET WITH QUILL (U+2046)
-; :*:∴::Send ∵{Left} ; - BECAUSE (U+2235)
+:*:‿::Send ⁀{Left} ; - CHARACTER TIE (U+2040)
+:*:⁅::Send ⁆{Left} ; - RIGHT SQUARE BRACKET WITH QUILL (U+2046)
+:*:∴::Send ∵{Left} ; - BECAUSE (U+2235)
 
 ; Typing keys
 Space::Send {Space}{Left}

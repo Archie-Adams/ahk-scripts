@@ -10,17 +10,8 @@
 
 #SingleInstance, force
 
-; ------------------------- Configuration Variables ------------------------  ;
-configLoaded = false
-#Include *i C:\Users\archi\OneDrive\ahk-scripts\config\config.ahk ; FIXME: Needs to be more dynamic.
-If (%configLoaded%) {
-  ;; Config loaded correctly.
-} else {
-  ; Need to use default values.
-  googleAppsUi_browser = "chrome.exe"
-  googleAppsUi_hotkey = #!z
-}
-; --------------------------------------------------------------------------  ;
+googleAppsUi_browser = "chrome.exe"
+googleAppsUi_hotkey = #!z
 
 
 ; ----------------------------------- GUI ----------------------------------  ;
@@ -78,6 +69,7 @@ Gui, add, text,, YouTube: ALT+Y
 
 
 ; --------------------------------- Hotkeys --------------------------------  ;
+
 Hotkey, %googleAppsUi_hotkey%, toggleUi
 return
 toggleUi:
@@ -105,15 +97,6 @@ openURL(url)
   Gui, hide
 }
 
-
-; global
-; emoty initialy, ability to add menus
-
-; menu file
-; <+>+g::Google Programs
-
-
-
 A::openURL("https://script.google.com/home/start")
 B::openURL("https://console.firebase.google.com/")
 C::openURL("https://mail.google.com/chat/u/0/#chat/welcome")
@@ -140,12 +123,10 @@ X::openURL("https://docs.google.com/spreadsheets/u/0/")
 Y::openURL("https://www.google.com/maps/d/u/0/")
 Z::openURL("https://myaccount.google.com/")
 
-
 +S::openURL("https://slides.new")
 +W::openURL("https://docs.new")
 +X::openURL("https://sheets.new")
 +D::openURL("https://docs.google.com/drawings")
-
 
 !W::openURL("https://news.google.com/")
 !B::openURL("https://books.google.com/")
@@ -159,4 +140,5 @@ Z::openURL("https://myaccount.google.com/")
 !A::openURL("https://patents.google.com/")
 
 #If
+
 ; --------------------------------------------------------------------------  ;

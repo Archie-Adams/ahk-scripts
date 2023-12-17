@@ -279,7 +279,7 @@ WinGetPosEx(hWindow,ByRef X="",ByRef Y="",ByRef Width="",ByRef Height="",ByRef O
 ; 3 rows, 1 column, third row, first column
 #!PgDn::SnapActiveWindowGrid(3, 1, 3, 1)
 
-
+\
 ; 3x3 Grid
 
 ; Snap to top left third of screen (Ctrl + Win + Alt + Numpad)  1, 1)
@@ -320,4 +320,48 @@ WinGetPosEx(hWindow,ByRef X="",ByRef Y="",ByRef Width="",ByRef Height="",ByRef O
 ; Could use win + right alt for more combos.
 
 ; TODO: Window resizing/sliding effecting two windows.
-; Could use gui to enter pixels?
+
+; TODO: Some sort of ui to make setting exact layouts simple?
+
+; Could a tape/roll of windows work?
+; etc there are windows taking up both halves of screen
+; - pressing a hotkey will cycle the left window through all open windows
+; - pressing another hotkey will cycle the right window.
+; - How would this work with multi monitor?
+; - scalable to three windows for ultrawide?
+; - needs thinking over.
+
+; a way of controlling using the 'tapdance' functions?
+
+; ------------------------------------------
+; ;?????????????????????????????????????\ .-------------------------------------+
+; return                                 ;                                      |
+; Timer:                                 ; -  - triple Tap + Hold - BLOCK 1 -  -|
+;    {                                   ; This is the block that starts        |
+;     If !%A_ThisHotkey%key              ; the count forall Hotkeys.            |
+;     SetTimer, %A_ThisHotkey%key, -400  ; Make sure it is placed above         |
+;     %A_ThisHotkey%key++                ; Block 2 & that the prefix is changed |
+;     Return                             ; to match the key's Name, as only 1   |
+;             }                          ; may Exist. instance of this lable    |
+; ;_____________________________________/ `-------------------------------------+
+
+
+
+; Q:: goto timer
+; ;???????????????????????????????????????????\
+; qkey:                                        ;           +------------------+
+; If GetKeyState("q","P") and %A_ThisLabel%=1  ;>----------¦   Hold  Action   ¦
+;      msgbox you held down the key Q          ;           +------------------+
+; ;  -  -  -  -  -  -  -  -  -  -  -  -  -  -  +
+;    Else If %A_ThisLabel% = 3                 ;           +------------------+
+;     msgbox you pressed the key Q 3 times     ;>----------¦ 3X Press  Action ¦
+; ;  -  -  -  -  -  -  -  -  -  -  -  -  -  -  +           +------------------+
+;    Else If %A_ThisLabel% = 2                 ;           +------------------+
+;     msgbox you pressed the key Q 2 times     ;>----------¦ 2X Press  Action ¦
+; ;  -  -  -  -  -  -  -  -  -  -  -  -  -  -  +           +------------------+
+;    Else If %A_ThisLabel% = 1                 ;           +------------------+
+;      msgbox you pressed the key Q 1 time     ;>----------¦ 1X Press  Action ¦
+; ;  -  -  -  -  -  -  -  -  -  -  -  -  -  -  +           +------------------+
+; %A_ThisLabel%=0                              ;
+;  return                                      ;
+; ;___________________________________________/

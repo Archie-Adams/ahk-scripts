@@ -16,7 +16,7 @@ SetCapsLockState, AlwaysOff
 SetTitleMatchMode, 2
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 
-Run, "global\fastnav\google-apps-ui.ahk"
+Run, ".\google-apps-ui.ahk"
 
 ; TODO: Single config. Perhaps in this file.
 ; Set include directory
@@ -42,36 +42,3 @@ Run, "global\fastnav\google-apps-ui.ahk"
 #Include programs\chrome\chrome.ahk
 #Include programs\vscode\vscode.ahk
 ;  ---------------------------------------
-
-
-; website shortcuts ----------------------
-#Include websites\websites.ahk
-;  ---------------------------------------
-
-
-
-;  --------------------------------------------------------------------------  ;
-; Script reload shortcut.
-#If
-#>!Enter::
-DetectHiddenWindows, On ; Detects the pop up of the non compiled script.
-path_google = C:\Users\archi\OneDrive\ahk-scripts\src\global\fastnav\google-apps-ui.ahk
-WinClose, %path_google% ahk_class AutoHotkey
-Reload
-Return
-
-; Script exit shortcut.
-#If
-#+>!Enter::
-DetectHiddenWindows, On ; Detects the pop up of the non compiled script.
-path_google = C:\Users\archi\OneDrive\ahk-scripts\src\global\fastnav\google-apps-ui.ahk
-WinClose, %path_google% ahk_class AutoHotkey
-ExitApp
-Return
-
-
-
-; /* -------------------------------------------------------------------------- */
-; TESTING ZONE
-
-Shift & Backspace::Send, {Delete}
