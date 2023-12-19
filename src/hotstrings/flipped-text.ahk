@@ -1,6 +1,6 @@
-﻿; flipped-text.ahk v0.2.0
+﻿; flipped-text.ahk v1.0.0
 ; Copyright (c) 2023 Archie Adams
-; TODO: GitHub URL
+; https://github.com/Archie-Adams/ahk-flipped-text
 ;
 ; MIT License
 ;
@@ -32,11 +32,9 @@
 #NoEnv
 SetBatchLines, -1
 
-; Extended from original mappings found at:
-; https://www.fileformat.info/convert/text/upside-down-map.htm
-; https://www.web2generators.com/text-related-tools/write-upside-down
-
 global toggle_flipped_text := false
+; TODO: Small icon/window in screen corner when toggle text is on and the
+;       hotkey to get out of it?
 
 ; --------------------------------- Functions -------------------------------- ;
 
@@ -67,7 +65,7 @@ flipSelectedText() {
 ; ---------------------------------- Hotkeys --------------------------------- ;
 
 !+Space::toggleFlippedTextToggle()
-; ::flipSelectedText ; TODO;
+; #!+Space::flipSelectedText() ; TODO;
 
 #If (toggle_flipped_text)
 
@@ -80,22 +78,20 @@ flipSelectedText() {
 Space::Send {Space}{Left}
 Enter::Send {End}{Enter}
 Tab::Send {Tab}{Left}
-; Left::Send {Right}
-; Right::Send {Left}
-; End::Send {Home}
-; Home::Send {End}
+Left::Send {Right}
+Right::Send {Left}
 Delete::Send {Backspace}
 Backspace::Send {Delete}
 
 ; Punctuation
 ; TODO: Rest of standard keyboaard punctuation
 !::Send ¡{Left} ; - INVERTED EXCLAMATION MARK (U+00A1)
-; @
-; #
-; £
-; $
-; %
-; ^
+; @ ; - ; FIXME
+#::Send #{Left} ; - Identical
+; £ ; - ; FIXME
+$::Send ${Left} ; - Identical
+; % ; - ; FIXME
+; ^ ; - ; FIXME
 &::Send ⅋{Left} ; - TURNED AMPERSAND (U+214B)
 ; *
 
@@ -112,17 +108,18 @@ Backspace::Send {Delete}
 ]::Send [{Left} ; - Left SQUARE BRACKET
 
 .::Send ˙{Left} ; - DOT ABOVE (U+02D9)
+,::Send {`'}{Left} ; - apostrophe
 `;::Send ؛{Left} ; - ARABIC SEMICOLON (U+061B)
 ?::Send ¿{Left} ; - INVERTED QUESTION MARK (U+00BF)
 _::Send ‾{Left} ; - OVERLINE (U+203E)
 
 ; Numbers
 0::Send 0{Left} ; - Identical
-1::Send Ɩ{Left} ; - iota
-2::Send ᄅ{Left} ; - hangul choseong rieul (U+1105)
+1::Send ⇂{Left} ; - Downwards Harpoon With Barb Rightwards (U+21C2)
+2::Send ᘔ{Left} ; - Canadian Syllabics Carrier JU (U+1614)
 3::Send Ɛ{Left} ; - LATIN CAPITAL LETTER OPEN E (U+0190)
-4::Send ᔭ{Left} ; - CANADIAN SYLLABICS YA (U+152D)
-5::SEND ϛ{Left} ; - ; Stigma (ligature)
+4::Send ߈{Left} ; - Nko Digit Eight (U+07C8)
+5::SEND ဌ{Left} ; - Myanmar Letter TTHA (U+100C)
 6::Send 9{Left} ; - DIGIT NINE (U+0039)
 7::Send Ɫ{Left} ; - LATIN CAPITAL LETTER L WITH MIDDLE TILDE (U+2C62)
 8::Send 8{Left} ; - Identical
@@ -130,16 +127,16 @@ _::Send ‾{Left} ; - OVERLINE (U+203E)
 
 ; Capitalised Latin Letters
 +A::Send ∀{Left} ; - FOR ALL (U+2200)
-+B::Send 𐐒{Left} ; - DESERET CAPITAL LETTER BEE (U+10412)
++B::Send ᗺ{Left} ; - Canadian Syllabics Carrier Kha (U+15FA)
 +C::Send Ↄ{Left} ; - ROMAN NUMERAL REVERSED ONE HUNDRED (U+2183)
-+D::Send ◖{Left} ; - LEFT HALF BLACK CIRCLE (U+25D6)
++D::Send ᗡ{Left} ; - Canadian Syllabics Carrier Tha (U+15E1)
 +E::Send Ǝ{Left} ; - LATIN CAPITAL LETTER REVERSED E (U+018E)
 +F::Send Ⅎ{Left} ; - TURNED CAPITAL F (U+2132)
 +G::Send ⅁{Left} ; - TURNED SANSSERIF CAPITAL G (U+2141)
 +H::Send H{Left} ; - Identical
 +I::Send I{Left} ; - Identical
 +J::Send ſ{Left} ; - LATIN SMALL LETTER LONG S (U+017F)
-+K::Send ⋊{Left} ; - RIGHT NORMAL FACTOR SEMIDIRECT PRODUCT (U+22CA)
++K::Send Ʞ{Left} ; - Latin Capital Letter Turned K (U+A7B0)
 +L::Send ⅂{Left} ; - TURNED SANSSERIF CAPITAL L (U+2142)
 +M::Send W{Left} ; - LATIN CAPITAL LETTER W (U+0057)
 +N::Send ᴎ{Left} ; - LATIN LETTER SMALL CAPITAL REVERSED N (U+1D0E)
@@ -165,16 +162,15 @@ e::Send ǝ{Left} ; - LATIN SMALL LETTER TURNED E (U+01DD)
 f::Send ɟ{Left} ; - LATIN SMALL LETTER DOTLESS J WITH STROKE (U+025F)
 g::Send ƃ{Left} ; - LATIN SMALL LETTER B WITH TOPBAR (U+0183)
 h::Send ɥ{Left} ; - LATIN SMALL LETTER TURNED H (U+0265)
-; i::Send ı{Left} ; - LATIN SMALL LETTER DOTLESS I (U+0131)
-i::Send !{Left} ; - Exclamation mark
+i::Send ᴉ{Left} ; - Latin Small Letter Turned I (U+1D09)
 j::Send ɾ{Left} ; - LATIN SMALL LETTER R WITH FISHHOOK (U+027E)
 k::Send ʞ{Left} ; - LATIN SMALL LETTER TURNED K (U+029E)
-l::Send ʃ{Left} ; - LATIN SMALL LETTER ESH (U+0283)
+l::Send l{Left} ; - Identical
 m::Send ɯ{Left} ; - LATIN SMALL LETTER TURNED M (U+026F)
 n::Send u{Left} ; - LATIN SMALL LETTER U (U+0075)
 o::Send o{Left} ; - Identical
-p::Send p{Left} ; - ; FIXME
-q::Send q{Left} ; - ; FIXME
+p::Send d{Left} ; - Latin Small Letter D (U+0064)
+q::Send b{Left} ; - Latin Small Letter B (U+0062)
 r::Send ɹ{Left} ; - LATIN SMALL LETTER TURNED R (U+0279)
 s::Send ƨ{Left} ; - minuscule https://en.wikipedia.org/wiki/%C6%A7
 t::Send ʇ{Left} ; - LATIN SMALL LETTER TURNED T (U+0287)
