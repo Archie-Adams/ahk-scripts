@@ -1,0 +1,60 @@
+{
+  "hotkey": "!Space",
+  "maxCommandListLength": 10,
+  "enableShiftJAndKNavigation": true,
+  "style": {
+    "background": "#124078",
+    "commandInput": "#faebd7",
+    "borders": "#faebd7",
+    "commandListText": "#faebd7",
+    "focusedCommand": "#120857",
+    "emptyColour": "#e25259",
+    "baseFontSize": "16",
+    "fontFamily": "Consolas",
+    "customCssString": ""
+  },
+  "commands": [
+    {
+      "name": "sleep_pc",
+      "hotkey": "",
+      "module": "default",
+      "function": "sleep_pc"
+    },
+    {
+      "name": "hibernate_pc",
+      "hotkey": "",
+      "module": "default",
+      "function": "hibernate_pc"
+    },
+    {
+      "name": "shutdown_pc",
+      "hotkey": "",
+      "module": "default",
+      "function": "shutdown_pc"
+    },
+    {
+      "name": "reboot_pc",
+      "hotkey": "",
+      "module": "default",
+      "function": "reboot_pc"
+    },
+    {
+      "name": "mute",
+      "hotkey": "",
+      "module": "default",
+      "function": "mute"
+    },
+    {
+      "name": "toggle_mute",
+      "hotkey": "",
+      "module": "default",
+      "function": "toggle_mute"
+    },
+    {
+      "name": "Reload Command Palette",
+      "hotkey": "",
+      "module": "default",
+      "function": "reload_command_palette"
+    }
+  ]
+}

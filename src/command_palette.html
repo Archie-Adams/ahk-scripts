@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!-- This is where size config is inserted. (all css based on rem) -->
+<html style="font-size: {}px">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <script>
+    var onResize = function (element, callback) {
+      if (!onResize.watchedElementData) {
+        // First time we are called, create a list of watched elements
+        // and hook up the event listeners.
+        onResize.watchedElementData = [];
+
+        var checkForChanges = function () {
+          onResize.watchedElementData.forEach(function (data) {
+            if (data.element.offsetWidth !== data.offsetWidth ||
+              data.element.offsetHeight !== data.offsetHeight) {
+              data.offsetWidth = data.element.offsetWidth;
+              data.offsetHeight = data.element.offsetHeight;
+              data.callback();
+            }
+          });
+        };
+
+        // Listen to the window's size changes
+        window.addEventListener('resize', checkForChanges);
+
+        // Listen to changes on the elements in the page that affect layout
+        var observer = new MutationObserver(checkForChanges);
+        observer.observe(document.body, {
+          attributes: true,
+          childList: true,
+          characterData: true,
+          subtree: true
+        });
+      }
+
+      // Save the element we are watching
+      onResize.watchedElementData.push({
+        element: element,
+        offsetWidth: element.offsetWidth,
+        offsetHeight: element.offsetHeight,
+        callback: callback
+      });
+    };
+
+    function initialFocusInput() {
+      var input = document.getElementById("input").focus();
+    }
+
+    function resizeOnCommandListChangeSize() {
+      onResize(document.getElementById("palette"), function () {
+        ahk.setWindowHeight(this.offsetHeight);
+      });
+    }
+
+    function initialResize() {
+      setTimeout(function () {
+        ahk.setWindowHeight(document.getElementById('palette').offsetHeight);
+      }, 100)
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener('load', initialFocusInput);
+      window.addEventListener('load', resizeOnCommandListChangeSize);
+      window.addEventListener('load', initialResize);
+    } else {
+      window.attachEvent('onload', initialFocusInput);
+      window.attachEvent('onload', resizeOnCommandListChangeSize);
+      window.attachEvent('onload', initialResize);
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #414446;
+      color: #faebd7;
+      max-width: 40rem;
+      margin: 0;
+      font-family: 'Gadugi Candara Consolas';
+    }
+
+    body #palette {
+      border: 1px solid #faebd7;
+      border-radius: .5rem
+    }
+
+    body #palette #search {
+      border-bottom: 1px solid #faebd7;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 1rem
+    }
+
+    body #palette #search .input-container {
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      position: relative
+    }
+
+    body #palette #search .input-container input {
+      background: #414446;
+      border: none;
+      color: #faebd7;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    body #palette #list {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: .75rem;
+      /* TODO: Could do with a nice way of dealing with page scroll. */
+      max-height: 45rem;
+      overflow-y: hidden;
+    }
+
+    body #palette #list .empty {
+      color: #e25259;
+      align-self: center;
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    body #palette #list .command {
+      border-radius: 6px;
+      color: #faebd7;
+    }
+
+    body #palette #list .command p {
+      margin: 0
+    }
+
+    body #palette #list .command.focused {
+      background-color: #553665
+    }
+
+    body #palette #list .command .command-container {
+      -ms-flex-pack: justify;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: space-between;
+      padding: .5rem
+    }
+
+    body #palette #list .command .command-container .left-container {
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    body #palette #list .command .command-container .left-container .module {
+      font-size: 0.7rem;
+      color: rgb(136, 138, 148);
+      padding: 0.15rem 0.3rem;
+      background-color: #292a4b;
+      border-radius: 3px;
+      margin-left: 1rem;
+    }
+
+    body #palette #list .command:not(:last-child) {
+      margin-bottom: .5rem
+    }
+  </style>
+  <!-- This is where config css is inserted. -->
+  <style>{}</style>
+</head>
+
+<body>
+  <div id="palette">
+    <div id="search">
+      &gt;
+      &nbsp;
+      <div class="input-container">
+        <!--
+          TODO: Hide the clear button (Will have to hack a box over it because
+                of IE compatibility mode apparently).
+        -->
+        <input autofocus id="input" type="text"
+          oninput="ahk.updateShownCommands(this.value)"
+          onblur="var el = this; setTimeout(function() { el.focus() }, 10)" />
+      </div>
+    </div>
+    <div id="list">
+      <!-- TODO: Add example commands for custom css users to look at -->
+    </div>
+  </div>
+</body>
+
+</html>
