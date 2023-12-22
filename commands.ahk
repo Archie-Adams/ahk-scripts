@@ -13,16 +13,19 @@
 
 ; ---------------------------------------------------------------------------- ;
 
-;COMMAND|Toggle Powershell|togglers
-;Opens a new Powershell window if none are open, otherwise switches to the open 
+;NAME|Toggle Powershell
+;MODULE|togglers
+;DESC|Opens a new Powershell window if none are open, otherwise switches to the open 
 ;window
 #`::toggle_powershell()
-;COMMAND|Instant Switch Chrome|togglers
-;Opens a new chrome window if none are open alredy, focuses the last chrome 
+;NAME|Instant Switch Chrome
+;MODULE|togglers
+;DESC|Opens a new chrome window if none are open alredy, focuses the last chrome 
 ;window already open or if already focused then switches tabs.
 #c::switchToChrome()
-;COMMAND|Instant Switch Explorer|togglers
-;Opens a new explorer window if none are open alredy, focuses the last explorer 
+;NAME|Instant Switch Explorer
+;MODULE|togglers
+;DESC|Opens a new explorer window if none are open alredy, focuses the last explorer 
 ;window already open or if already focused then switches explore window.
 #x::switchToExplorer()
 ;COMMAND|Close all explorers|misc
@@ -31,93 +34,121 @@
 
 ; Windows + Shift --------------------------------------------------------------
 
-;COMMAND|E:\|open directories
-;Opens E:\
+;NAME|E:\
+;MODULE|open directories
+;DESC|Opens E:\
 +#F5::open_folder_drive_E()
-;COMMAND|G:\|open directories
-;Opens G:\
+;NAME|G:\
+;MODULE|open directories
+;DESC|Opens G:\
 +#F6::open_folder_drive_G()
-;COMMAND|C:\|open directories
-;Opens C:\
+;NAME|C:\
+;MODULE|open directories
+;DESC|Opens C:\
 +#F7::open_folder_drive_C()
-;COMMAND|F:\|open directories
-;Opens F:\
+;NAME|F:\
+;MODULE|open directories
+;DESC|Opens F:\
 +#F8::open_folder_drive_F()
 
-;COMMAND|Powershell|run programs
-;Opens Powershell
+;NAME|Powershell
+;MODULE|run programs
+;DESC|Opens Powershell
 +#`::run_powershell()
 
-;COMMAND|GOG|run programs
-;Opens GOG
+;NAME|GOG
+;MODULE|run programs
+;DESC|Opens GOG
 +#q::run_gog()
-;COMMAND|Microsoft Word|run programs
-;Opens Microsoft Word
+;NAME|Microsoft Word
+;MODULE|run programs
+;DESC|Opens Microsoft Word
 +#w::run_microsoft_word()
-;COMMAND|Sublime Text 3|run programs
-;Opens Sublime Text 3
+;NAME|Sublime Text 3
+;MODULE|run programs
+;DESC|Opens Sublime Text 3
 +#t::run_sublime_text_3()
-;COMMAND|YouTube|run programs
-;Opens www.youtube.com/subscriptions
+;NAME|YouTube
+;MODULE|run programs
+;DESC|Opens www.youtube.com/subscriptions
 +#y::run_youtube_subscriptions_chrome()
-;COMMAND|Duolingo|run programs
-;Opens duolingo.com
+;NAME|Duolingo
+;MODULE|run programs
+;DESC|Opens duolingo.com
 +#u::run_duolingo_chrome()
-;COMMAND|LinkedIn|run programs
-;Opens www.linkedin.com
+;NAME|LinkedIn
+;MODULE|run programs
+;DESC|Opens www.linkedin.com
 +#i::run_linkedin_profile_chrome()
-;COMMAND|OneNote|run programs
-;Opens OneNote
+;NAME|OneNote
+;MODULE|run programs
+;DESC|Opens OneNote
 +#o::run_onenote()
-;COMMAND|Google Photos|run programs
-;Opens www.photos.google.com
+;NAME|Google Photos
+;MODULE|run programs
+;DESC|Opens www.photos.google.com
 +#p::run_google_photos_chrome()
 
-;COMMAND|MSI Afterburner|run programs
-;Opens MSI Afterburner
+;NAME|MSI Afterburner
+;MODULE|run programs
+;DESC|Opens MSI Afterburner
 +#a::run_msi_afterburner()
-;COMMAND|Discord|run programs
-;Opens Discord
+;NAME|Discord
+;MODULE|run programs
+;DESC|Opens Discord
 +#d::run_discord()
-;COMMAND|Microsoft Teams|run programs
-;Opens Microsoft Teams
+;NAME|Microsoft Teams
+;MODULE|run programs
+;DESC|Opens Microsoft Teams
 +#f::run_microsoft_teams()
-;COMMAND|Gmail|run programs
-;Opens www.mail.google.com
+;NAME|Gmail
+;MODULE|run programs
+;DESC|Opens www.mail.google.com
 +#g::run_gmail_chrome()
-;COMMAND|Google Calendar|run programs
-;Opens www.calendar.google.com
+;NAME|Google Calendar
+;MODULE|run programs
+;DESC|Opens www.calendar.google.com
 +#h::run_google_calendar_chrome()
-;COMMAND|Downloads|run programs
-;Opens the Downloads folder
+;NAME|Downloads
+;MODULE|run programs
+;DESC|Opens the Downloads folder
 +#j::open_folder_downloads()
-;COMMAND|OneDrive|run programs
-;Opens the OneDrive folder
+;NAME|OneDrive
+;MODULE|run programs
+;DESC|Opens the OneDrive folder
 +#k::open_folder_OneDrive()
-;COMMAND|OneDrive University of Leeds|run programs
-;Opens the University of Leeds OneDrive folder
+;NAME|OneDrive University of Leeds
+;MODULE|run programs
+;DESC|Opens the University of Leeds OneDrive folder
 +#l::open_folder_OneDrive_UoL()
-;COMMAND|Outlook|run programs
-;Opens the www.outlook.com
+;NAME|Outlook
+;MODULE|run programs
+;DESC|Opens the www.outlook.com
 +#;::run_outlook_chrome()
 
-;COMMAND|Google Chrome|run programs
-;Opens Google Chrome
+;NAME|Google Chrome
+;MODULE|run programs
+;DESC|Opens Google Chrome
 +#z::run_chrome()
-;COMMAND|Search selected text|default
-;Searches the selected text using Google Chrome
+;NAME|Search selected text
+;MODULE|default
+;DESC|Searches the selected text using Google Chrome
 +#c::search_selected_text()
-;COMMAND|VSCode|run programs
-;Opens VSCode
+;NAME|VSCode
+;MODULE|run programs
+;DESC|Opens VSCode
 +#v::run_vscode()
-;COMMAND|GitHub|run programs
-;Opens www.github.com
+;NAME|GitHub
+;MODULE|run programs
+;DESC|Opens www.github.com
 +#b::run_github_chrome()
-;COMMAND|Netflix|run programs
-;Opens www.netflix.com
+;NAME|Netflix
+;MODULE|run programs
+;DESC|Opens www.netflix.com
 +#n::run_netflix_chrome()
-;COMMAND|Google Maps|run programs
-;Opens www.google.com/maps
+;NAME|Google Maps
+;MODULE|run programs
+;DESC|Opens www.google.com/maps
 +#m::run_google_maps_chrome()
 
 ; ----------------------------- Windows + Control ---------------------------- ;

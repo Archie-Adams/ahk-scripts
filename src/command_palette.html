@@ -51,13 +51,15 @@
 
     function resizeOnCommandListChangeSize() {
       onResize(document.getElementById("palette"), function () {
-        ahk.setWindowHeight(this.offsetHeight);
+        ahk.palette_setWindowHeight(this.offsetHeight);
       });
     }
 
     function initialResize() {
       setTimeout(function () {
-        ahk.setWindowHeight(document.getElementById('palette').offsetHeight);
+        ahk.palette_setWindowHeight(
+          document.getElementById('palette').offsetHeight
+        );
       }, 100)
     }
 
@@ -179,7 +181,7 @@
                 of IE compatibility mode apparently).
         -->
         <input autofocus id="input" type="text"
-          oninput="ahk.updateShownCommands(this.value)"
+          oninput="ahk.palette_updateShownCommands(this.value)"
           onblur="var el = this; setTimeout(function() { el.focus() }, 10)" />
       </div>
     </div>

@@ -9,7 +9,7 @@
     "commandListText": "#faebd7",
     "focusedCommand": "#120857",
     "emptyColour": "#e25259",
-    "baseFontSize": "16",
+    "scale": "16",
     "fontFamily": "Consolas",
     "customCssString": ""
   },
