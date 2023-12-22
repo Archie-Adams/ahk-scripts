@@ -1,9 +1,15 @@
 ﻿#Include %A_ScriptDir%/functions/misc.ahk
-#Include %A_ScriptDir%/functions/runs.ahk
 #Include %A_ScriptDir%/functions/system.ahk
 #Include %A_ScriptDir%/functions/toggles.ahk
 #Include %A_ScriptDir%/functions/folders.ahk
+#Include %A_ScriptDir%/functions/programs.ahk
+#Include %A_ScriptDir%/functions/websites.ahk
+#Include %A_ScriptDir%/functions/window_snap.ahk
 #Include %A_ScriptDir%/functions/flipped_text.ahk
+
+; ---------------------------------------------------------------------------- ;
+
+; TODO: A section for importing v1 commands when this is ported to v2.
 
 ; ---------------------------------------------------------------------------- ;
 
@@ -116,26 +122,27 @@
 
 ; ----------------------------- Windows + Control ---------------------------- ;
 
-; +#^F8::run, D:\
+; TODO: config these hotkeys
 
-; +#^q::Run, "G:\Games\1) Steam\steam.exe"
++#^F8::open_folder_drive_D()
 
-; +#^w::Run, "https://docs.google.com/document/u/0/"
++#^q::run_steam()
 
-; +#^e::Run, "C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE"
++#^w::run_google_documents()
 
-; +#^u::Run, chrome.exe "https://www.udemy.com/"
++#^e::run_microsoft_excel()
 
-; +#^i::Run, chrome.exe "https://www.linkedin.com/learning/me?trk=nav_neptune_learning&u=57895809"
++#^u::run_udemy_chrome()
 
-; +#^p::Run, "C:\Program Files\Microsoft Office\Root\Office16\POWERPNT.EXE"
++#^i::run_linkedin_chrome()
 
-; +#^d::Run, C:\Users\archi\Documents
++#^p::run_microsoft_powerpoint()
 
-; +#^g::Run, chrome.exe "https://drive.google.com/drive/my-drive"
++#^d::open_folder_documents()
 
-; +#^z::Run, chrome.exe -incognito
++#^g::run_google_drive_chrome()
 
++#^z::run_incognito_chrome()
 
 ; ------------------------------- Windows + Alt ------------------------------ ;
 
@@ -147,7 +154,7 @@
 
 ; #!a::Run, chrome.exe "https://www.amazon.co.uk/"
 
-; #!s::Run shell:startup
+#!s::open_folder_startup()
 
 ; #!d::Run, chrome.exe "https://app.diagrams.net/"
 
@@ -159,11 +166,122 @@
 
 ; #!b::Run, "C:\Program Files (x86)\MusicBee\MusicBee.exe"
 
-; #!n::Run, chrome.exe "https://www.notion.so/"
-
 ; #!m::Run, chrome.exe "https://minerva.leeds.ac.uk/"
 
 ; ------------------------------------------------------------------------------
+
+; Window Snapping --------------------------------------------------------------
+
+; Snap to top half of screen (Win + Alt + Arrows)
+; 2 rows, 1 column, first row, first column
+; #!Up::SnapActiveWindowGrid(2, 1, 1, 1)
+; Snap to bottom half of screen
+; 2 rows, 1 columns, second row, first column
+; #!Down::SnapActiveWindowGrid(2, 1, 2, 1)
+
+; Horizontal thirds ----------------------------------------
+; Snap to left third of screen (Win + Alt + Numpad)
+; 1 row, 3 columns, first row, first column
+; #!Insert::SnapActiveWindowGrid(1, 3, 1, 1)
+; Snap to center third of screen
+; 1 row, 3 columns, first row, second column
+; #!Home::SnapActiveWindowGrid(1, 3, 1, 2)
+; Snap to right third of screen
+; 1 row, 3 columns, first row, second column
+; #!PgUp::SnapActiveWindowGrid(1, 3, 1, 3)
+
+; Vertical thirds ----------------------------------------
+; Snap to upper third of screen (Win + Alt + Numpad)
+; 3 rows, 1 column, first row, first column
+; #!Del::SnapActiveWindowGrid(3, 1, 1, 1)
+; Snap to middle third of screen
+; 3 rows, 1 column, second row, first column
+; #!End::SnapActiveWindowGrid(3, 1, 2, 1)
+; Snap to bottom third of screen
+; 3 rows, 1 column, third row, first column
+; #!PgDn::SnapActiveWindowGrid(3, 1, 3, 1)
+
+; 3x3 Grid ----------------------------------------
+; Snap to top left third of screen (Ctrl + Win + Alt + Numpad)  1, 1)
+; ^#!PrintScreen::SnapActiveWindowGrid(3, 3, 1, 1)
+; Snap to top middle third of screen
+; ^#!ScrollLock::SnapActiveWindowGrid(3, 3, 1, 2)
+; Snap to top right third of screen
+; ^#!CtrlBreak::SnapActiveWindowGrid(3, 3, 1, 3)
+; Snap to center left third of screen
+; ^#!Insert::SnapActiveWindowGrid(3, 3, 2, 1)
+; Snap to center third of screen
+; ^#!Home::SnapActiveWindowGrid(3, 3, 2, 2)
+; Snap to center right third of screen
+; ^#!PgUp::SnapActiveWindowGrid(3, 3, 2, 3)
+; Snap to bottom left third of screen
+; ^#!Del::SnapActiveWindowGrid(3, 3, 3, 1)
+; Snap to bottom middle third of screen
+; ^#!End::SnapActiveWindowGrid(3, 3, 3, 2)
+; Snap to bottom right third of screen
+; ^#!PgDn::SnapActiveWindowGrid(3, 3, 3, 3)
+
+; TODO: Implement window snap commands
+
+; ; Numpad unmodified, activate corresponding window
+; Numpad1::activateWindow(1)
+; Numpad2::activateWindow(2)
+; Numpad3::activateWindow(3)
+; Numpad4::activateWindow(4)
+; Numpad6::activateWindow(6)
+; Numpad7::activateWindow(7)
+; Numpad8::activateWindow(8)
+; Numpad9::activateWindow(9)
+
+; ; Win + Numpad = Snap to conrners for diagonals, or top, bottom, left, right of screen (Landscape)
+; #Numpad7::SnapActiveWindow("top","left","half")
+; #Numpad8::SnapActiveWindow("top","full","half")
+; #Numpad9::SnapActiveWindow("top","right","half")
+; #Numpad4::SnapActiveWindow("top","left","full")
+; #Numpad6::SnapActiveWindow("top","right","full")
+; #Numpad1::SnapActiveWindow("bottom","left","half")
+; #Numpad2::SnapActiveWindow("bottom","full","half")
+; #Numpad3::SnapActiveWindow("bottom","right","half")
+
+; ; Ctrl + Alt + Win + keypad = split off Chrome or Edge tab and move to new window
+; #If WinActive("ahk_exe chrome.exe") || WinActive("ahk_exe msedge.exe")
+; ^#!Numpad7::SplitSnapActiveWindow("top","left","half")
+; ^#!Numpad8::SplitSnapActiveWindow("top","full","half")
+; ^#!Numpad9::SplitSnapActiveWindow("top","right","half")
+; ^#!Numpad4::SplitSnapActiveWindow("top","left","full")
+; ^#!Numpad6::SplitSnapActiveWindow("top","right","full")
+; ^#!Numpad1::SplitSnapActiveWindow("bottom","left","half")
+; ^#!Numpad2::SplitSnapActiveWindow("bottom","full","half")
+; ^#!Numpad3::SplitSnapActiveWindow("bottom","right","half")
+; #IfWinActive
+
+; ; Shrink with Windows+Alt num pad
+; #!Numpad7::shrinkActiveWindow("halftopleft")
+; #!Numpad8::shrinkActiveWindow("halftop")
+; #!Up::shrinkActiveWindow("halftop")
+; #!Numpad9::shrinkActiveWindow("halftopright")
+; #!Numpad4::shrinkActiveWindow("halfleft")
+; #!Left::shrinkActiveWindow("halfleft")
+; #!Right::shrinkActiveWindow("halfright")
+; #!Numpad6::shrinkActiveWindow("halfright")
+; #!Numpad1::shrinkActiveWindow("halfbottomleft")
+; #!Numpad2::shrinkActiveWindow("halfbottom")
+; #!Down::shrinkActiveWindow("halfbottom")
+; #!Numpad3::shrinkActiveWindow("halfbottomright")
+
+; ; Scoot windows around the screen with ctrl+win number pad
+; ^#Numpad7::moveActiveWindow("moveupleft")
+; ^#Numpad8::moveActiveWindow("moveup")
+; ^#Up::moveActiveWindow("moveup")
+; ^#Numpad9::moveActiveWindow("moveupright")
+; ^#Numpad4::moveActiveWindow("moveleft")
+; ^#Left::moveActiveWindow("moveleft")
+; ^#Numpad6::moveActiveWindow("moveright")
+; ^#Right::moveActiveWindow("moveright")
+; ^#Numpad1::moveActiveWindow("movedownleft")
+; ^#Numpad2::moveActiveWindow("movedown")
+; ^#Down::moveActiveWindow("movedown")
+; ^#Numpad3::moveActiveWindow("movedownright")
 
 ; ---------------------------------------------------------------------------- ;
 ;                             flipped text hotkeys                             ;

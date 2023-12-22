@@ -25,3 +25,16 @@ open_folder_drive_C() {
 open_folder_drive_F() {
   run, F:\
 }
+
+open_folder_drive_D() {
+  run, D:\
+}
+
+; TODO: Can this be generalised?
+open_folder_documents() {
+  Run, C:\Users\archi\Documents
+}
+
+open_folder_startup() {
+  Run shell:startup
+}

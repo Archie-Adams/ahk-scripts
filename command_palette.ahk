@@ -31,6 +31,7 @@ SetBatchLines, -1
 #Include %A_ScriptDir%/lib/Json.ahk
 
 #Include %A_ScriptDir%/src/levenshtein_distance.ahk
+#Include %A_ScriptDir%/src/read_config.ahk
 
 ; TODO: Learn how to use pointers in AHK and split this file into functions in
 ;       a src/ directory to clean the code up.
@@ -40,13 +41,14 @@ SetBatchLines, -1
 ; ---------------------------------------------------------------------------- ;
 
 ; Load config
-FileRead, configString, %A_ScriptDir%/command_palette_config.json
-if ErrorLevel ; Successfully loaded.
-{
-  MsgBox % "Error loading config file."
-}
-config := JSON.parse(configString)
-configString := "" ; Free the memory.
+; FileRead, configString, %A_ScriptDir%/command_palette_config.json
+; if ErrorLevel ; Successfully loaded.
+; {
+;   MsgBox % "Error loading config file."
+; }
+; config := JSON.parse(configString)
+; configString := "" ; Free the memory.
+config := palette_getConfigObject()
 
 style_background := config.style.background ; Default: "#414446"
 style_commandInput := config.style.commandInput ; Default: "#faebd7"
