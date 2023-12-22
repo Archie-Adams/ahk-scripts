@@ -6,7 +6,7 @@
 
 palette_parseCommands() {
   CommandArray := []
-  ; TODO: Make nice looking hotkey.
+
   template =
   (
     <div class="command">
@@ -90,6 +90,11 @@ _generateCommandHtml(ByRef command, ByRef template) {
   command["html"] := Format(template
   , command["name"]
   , command["module"]
-  , command["hotkey"]
+  , _generateHotkeyHtml(command["hotkey"])
   , command["desc"])
+}
+
+_generateHotkeyHtml(hotkey) {
+  ; TODO: Make nice looking hotkey.
+  return hotkey
 }

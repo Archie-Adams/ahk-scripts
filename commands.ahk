@@ -26,10 +26,11 @@
 ;NAME|Instant Switch Explorer
 ;MODULE|togglers
 ;DESC|Opens a new explorer window if none are open alredy, focuses the last explorer 
-;window already open or if already focused then switches explore window.
+;DESC|window already open or if already focused then switches explore window.
 #x::switchToExplorer()
-;COMMAND|Close all explorers|misc
-;Closes all explorer windows opened by instant switch
+;NAME|Close all explorers
+;MODULE|misc
+;DESC|Closes all explorer windows opened by instant switch
 #^x::closeAllExplorers()
 
 ; Windows + Shift --------------------------------------------------------------
