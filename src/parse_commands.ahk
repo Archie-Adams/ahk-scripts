@@ -6,7 +6,6 @@
 
 palette_parseCommands() {
   CommandArray := []
-  ; TODO: Add module
   ; TODO: Make nice looking hotkey.
   template =
   (
@@ -18,6 +17,7 @@ palette_parseCommands() {
         </div>
         <p class="hotkey">{}</p>
       </div>
+      <p class="description">{}</p>
     </div>
   )
 
@@ -38,7 +38,7 @@ palette_parseCommands() {
     }
     else if (InStr(A_LoopReadLine, ";DESC|"))
     {
-      command["desc"] := command["desc"] SubStr(A_LoopReadLine, 6)
+      command["desc"] := command["desc"] SubStr(A_LoopReadLine, 7)
     }
     else if (currentScanning and SubStr(A_LoopReadLine, 1, 1) == ":")
     {
@@ -90,5 +90,6 @@ _generateCommandHtml(ByRef command, ByRef template) {
   command["html"] := Format(template
   , command["name"]
   , command["module"]
-  , command["hotkey"])
+  , command["hotkey"]
+  , command["desc"])
 }

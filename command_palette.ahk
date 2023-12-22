@@ -138,15 +138,11 @@ palette_setFocusedCommand(neutron, newFocusedCommandIndex) {
   commandDivs := neutron.doc.querySelectorAll(".command")
 
   for i, div in neutron.Each(commandDivs)
-  {
     ; Selected command is 1 based as per it's array, apparently i is not.
     if (i == palette_selectedCommand - 1)
-    {
       div.className := "command focused"
-    } else {
+    else
       div.className := "command"
-    }
-  }
 }
 
 ; ---------------------------------------------------------------------------- ;
