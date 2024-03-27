@@ -55,6 +55,12 @@
       "hotkey": "",
       "module": "default",
       "function": "reload_command_palette"
+    },
+    {
+      "name": "Open Recycle Bin",
+      "hotkey": "",
+      "module": "folders",
+      "function": "open_folder_recycle_bin"
     }
   ]
 }

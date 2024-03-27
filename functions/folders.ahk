@@ -1,13 +1,25 @@
 open_folder_downloads() {
-  Run, C:\Users\archi\Downloads
+  EnvGet, hdrive, Homedrive
+  EnvGet, hpath, Homepath
+  Run, % hdrive hpath "\Downloads"
+}
+
+open_folder_documents() {
+  EnvGet, hdrive, Homedrive
+  EnvGet, hpath, Homepath
+  Run, % hdrive hpath "\Documents"
 }
 
 open_folder_OneDrive() {
-  run, C:\Users\archi\OneDrive ; TODO: Should use %A_UserName% for cross device compatability.
+  EnvGet, hdrive, Homedrive
+  EnvGet, hpath, Homepath
+  Run, % hdrive hpath "\OneDrive"
 }
 
 open_folder_OneDrive_UoL() {
-  Run, "C:\Users\archi\OneDrive - University of Leeds\u"
+  EnvGet, hdrive, Homedrive
+  EnvGet, hpath, Homepath
+  Run, % hdrive hpath "\OneDrive - University of Leeds\u"
 }
 
 open_folder_drive_E() {
@@ -30,11 +42,11 @@ open_folder_drive_D() {
   run, D:\
 }
 
-; TODO: Can this be generalised?
-open_folder_documents() {
-  Run, C:\Users\archi\Documents
-}
-
 open_folder_startup() {
   Run shell:startup
+}
+
+open_folder_recycle_bin() {
+  ; https://www.autohotkey.com/board/topic/8661-how-to-open-the-recycle-bin/#:~:text=Run%20%3A%3A%7B645FF040%2D5081%2D101B%2D9F08%2D00AA002F954E%7D
+  Run ::{645FF040-5081-101B-9F08-00AA002F954E}
 }

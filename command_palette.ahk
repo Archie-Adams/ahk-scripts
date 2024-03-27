@@ -70,8 +70,9 @@ Menu, Tray, Icon, src/command_palette.ico
 #Include %A_ScriptDir%/commands.ahk
 
 showCommandPalette:
-neutron.qs("#input").innerText := ""
-palette_updateShownCommands(neutron, "")
+defaultSearchString := ""
+neutron.qs("#input").innerText := defaultSearchString
+palette_updateShownCommands(neutron, defaultSearchString)
 neutron.Show()
 return
 
